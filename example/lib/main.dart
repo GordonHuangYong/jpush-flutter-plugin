@@ -68,6 +68,8 @@ class _MyAppState extends State<MyApp> {
         setState(() {
           debugLable = "flutter onConnected: $message";
         });
+      }, didFailToRegisterForRemoteNotification: (Map<String, dynamic> message) async {
+        print("flutter didFailToRegisterForRemoteNotification: $message");
       });
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
@@ -75,7 +77,7 @@ class _MyAppState extends State<MyApp> {
 
     jpush.setAuth(enable: true);
     jpush.setup(
-      appKey: "xxxxx", //你自己应用的 AppKey
+      appKey: "c011b68260553c92667ca2fc", //你自己应用的 AppKey
       channel: "theChannel",
       production: false,
       debug: true,

@@ -20,19 +20,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
 #  cupertino_icons: ^0.1.2
 
+#  jpush_flutter: any
+  jpush_flutter:
+    path: ../
 dev_dependencies:
   integration_test:
     sdk: flutter
   flutter_test:
     sdk: flutter
 
-  jpush_flutter: 
-    path: ../
-
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
-
-# The following section is specific to Flutter.
+  mockito: any
+  test: any
 flutter:
 
   # The following line ensures that the Material Icons font is

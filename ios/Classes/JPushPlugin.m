@@ -615,6 +615,11 @@ static NSMutableArray<FlutterResult>* getRidResults;
     [JPUSHService registerDeviceToken:deviceToken];
 }
 
+//huangyong 增加无法获取deviceToken时的通知。
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    [_channel invokeMethod:@"didFailToRegisterForRemoteNotification" arguments:@{@"error": [error flutterError]}];
+}
+
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     NSDictionary *settingsDictionary = @{
         @"sound" : [NSNumber numberWithBool:notificationSettings.types & UIUserNotificationTypeSound],
